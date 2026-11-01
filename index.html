@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -7,78 +7,116 @@
 <title>Full Vibes | Anime & Movies</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#101018;color:#fff;font-family:Arial,sans-serif}
-header{padding:18px;background:#191523;border-bottom:1px solid #393044}
-.logo{font-size:26px;font-weight:bold;color:#d9a4ff}
-header p{color:#bbb;font-size:13px}
-input{width:100%;padding:13px;border:1px solid #49365c;border-radius:10px;background:#252330;color:white}
-nav{display:flex;gap:20px;padding:14px;overflow:auto;background:#191523}
-nav a{color:white;text-decoration:none;white-space:nowrap}
-main{padding:16px}
-h2{font-size:20px}
-.hero{padding:22px;border-radius:14px;background:linear-gradient(130deg,#41215c,#171724)}
-.hero p,.muted{color:#d1c9d8;font-size:14px}
-.tag{color:#d9a4ff}
-.card{padding:16px;margin:14px 0;background:#201e2b;border-radius:12px}
-button{padding:11px 15px;border:0;border-radius:8px;background:#c88bff;color:#171020;font-weight:bold}
-video{width:100%;border-radius:10px;background:#000}
-footer{padding:24px;text-align:center;color:#aaa;font-size:12px}
+body{margin:0;background:#0b0b0b;color:white;font-family:Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 5%;background:#101010;position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:900;color:#ff3030}
+nav a{color:white;text-decoration:none;margin-left:13px;font-size:13px}
+.hero{padding:55px 6% 45px;background:linear-gradient(90deg,#180609,#371014,#111);min-height:270px}
+.tag{color:#ff4545;font-weight:bold;letter-spacing:2px}
+.hero h1{font-size:42px;margin:12px 0}
+.hero p{color:#ddd;max-width:450px;line-height:1.6}
+.btn{background:#e50914;color:white;border:0;padding:12px 19px;border-radius:5px;font-weight:bold;cursor:pointer}
+.search{padding:22px 5% 5px}
+input{width:100%;padding:14px;border:1px solid #444;border-radius:7px;background:#1b1b1b;color:white;font-size:16px}
+main{padding:15px 5% 40px}
+h2{font-size:22px;margin:20px 0 15px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{background:#181818;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.poster{height:155px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:20px;font-weight:900;text-shadow:0 2px 8px #000}
+.p1{background:linear-gradient(145deg,#190e35,#9a173d,#f26b36)}
+.p2{background:linear-gradient(145deg,#001e36,#075c81,#54b9d6)}
+.p3{background:linear-gradient(145deg,#130b0b,#8a1010,#ff6347)}
+.p4{background:linear-gradient(145deg,#182d21,#4a7d44,#b7a65d)}
+.p5{background:linear-gradient(145deg,#17102b,#493d80,#d65d9c)}
+.p6{background:linear-gradient(145deg,#090909,#343434,#8b111b)}
+.info{padding:10px}
+.info h3{font-size:14px;margin:0 0 7px}
+.info p{font-size:12px;color:#aaa;margin:0 0 10px}
+.watch{background:#292929;color:white;border:0;padding:8px;width:100%;border-radius:4px;cursor:pointer}
+.notice{color:#aaa;font-size:13px;line-height:1.6;margin-top:25px}
+footer{text-align:center;padding:24px;background:#111;color:#888;font-size:12px}
+#message{display:none;background:#202020;margin-top:15px;padding:15px;border-radius:8px;color:#eee;line-height:1.6}
+@media(min-width:650px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.poster{height:210px}}
+@media(max-width:360px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.poster{height:145px}.hero h1{font-size:34px}nav a{margin-left:6px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">FULL VIBES ✦</div>
-  <p>Anime • Movies • Bangla Subtitles</p>
-  <input id="search" placeholder="Anime বা Movie খুঁজুন..." oninput="findTitles()">
+  <div class="logo">FULL VIBES</div>
+  <nav>
+    <a href="#home">হোম</a>
+    <a href="#anime">Anime</a>
+    <a href="#movies">Movies</a>
+  </nav>
 </header>
-<nav>
-  <a href="#home">Home</a>
-  <a href="#anime">Anime</a>
-  <a href="#movies">Movies</a>
-  <a href="#player">Video Player</a>
-</nav>
-<main id="home">
-  <section class="hero">
-    <span class="tag">WELCOME TO FULL VIBES</span>
-    <h2>তোমার পছন্দের গল্পের দুনিয়া!</h2>
-    <p>Anime ও Movie-এর তথ্য এবং বাংলা সাবটাইটেলের অভিজ্ঞতা এক জায়গায়।</p>
-  </section>
 
+<section class="hero" id="home">
+  <div class="tag">YOUR ENTERTAINMENT WORLD</div>
+  <h1>Feel Every Vibe.</h1>
+  <p>তোমার পছন্দের Anime, Movies আর নতুন গল্পের দুনিয়া—সব এক জায়গায়।</p>
+  <button class="btn" onclick="document.getElementById('anime').scrollIntoView({behavior:'smooth'})">Explore Now ▶</button>
+</section>
+
+<div class="search">
+  <input id="search" type="search" placeholder="🔎 Anime বা Movie খুঁজুন..." oninput="filterCards()">
+</div>
+
+<main>
   <section id="anime">
-    <h2>🎌 Anime Zone</h2>
-    <div class="card searchable" data-title="anime">
-      <h3>Anime Collection</h3>
-      <p class="muted">এখানে অনুমতিপ্রাপ্ত Anime ও এপিসোড যোগ হবে।</p>
+    <h2>🔥 Popular Anime</h2>
+    <div class="cards">
+      <article class="card" data-name="shadow legend anime">
+        <div class="poster p1">SHADOW<br>LEGEND</div>
+        <div class="info"><h3>Shadow Legend</h3><p>Anime • Action</p><button class="watch" onclick="showInfo('Shadow Legend')">বিস্তারিত দেখুন</button></div>
+      </article>
+      <article class="card" data-name="ocean soul anime">
+        <div class="poster p2">OCEAN<br>SOUL</div>
+        <div class="info"><h3>Ocean Soul</h3><p>Anime • Adventure</p><button class="watch" onclick="showInfo('Ocean Soul')">বিস্তারিত দেখুন</button></div>
+      </article>
+      <article class="card" data-name="crimson night anime">
+        <div class="poster p3">CRIMSON<br>NIGHT</div>
+        <div class="info"><h3>Crimson Night</h3><p>Anime • Fantasy</p><button class="watch" onclick="showInfo('Crimson Night')">বিস্তারিত দেখুন</button></div>
+      </article>
     </div>
   </section>
 
   <section id="movies">
-    <h2>🎬 Movie Zone</h2>
-    <div class="card searchable" data-title="movie">
-      <h3>Movie Collection</h3>
-      <p class="muted">এখানে বৈধভাবে দেখানোর অনুমতি থাকা Movie যোগ হবে।</p>
+    <h2>🎬 Movies & More</h2>
+    <div class="cards">
+      <article class="card" data-name="wild earth movie">
+        <div class="poster p4">WILD<br>EARTH</div>
+        <div class="info"><h3>Wild Earth</h3><p>Movie • Adventure</p><button class="watch" onclick="showInfo('Wild Earth')">বিস্তারিত দেখুন</button></div>
+      </article>
+      <article class="card" data-name="dream city movie">
+        <div class="poster p5">DREAM<br>CITY</div>
+        <div class="info"><h3>Dream City</h3><p>Movie • Drama</p><button class="watch" onclick="showInfo('Dream City')">বিস্তারিত দেখুন</button></div>
+      </article>
+      <article class="card" data-name="last warrior movie">
+        <div class="poster p6">LAST<br>WARRIOR</div>
+        <div class="info"><h3>Last Warrior</h3><p>Movie • Action</p><button class="watch" onclick="showInfo('Last Warrior')">বিস্তারিত দেখুন</button></div>
+      </article>
     </div>
   </section>
 
-  <section id="player" class="card">
-    <h2>▶ Video Player</h2>
-    <video controls playsinline preload="metadata">
-      <source src="videos/demo.mp4" type="video/mp4">
-      <track kind="subtitles" src="subtitles/bangla.vtt"
-        srclang="bn" label="বাংলা" default>
-      আপনার ব্রাউজার ভিডিও চালাতে পারছে না।
-    </video>
-    <p class="muted">ভিডিও চালাতে অনুমতিপ্রাপ্ত ভিডিও ফাইল ও সাবটাইটেল যোগ করতে হবে।</p>
-  </section>
+  <div id="message"></div>
+  <p class="notice">Full Vibes হলো একটি নতুন বিনোদন ওয়েবসাইটের ডেমো। এখানে দেখানো নাম ও পোস্টার নমুনা হিসেবে তৈরি। ভিডিও চালু করতে নিজের তৈরি, পাবলিক-ডোমেইন বা ব্যবহারের অনুমতিপ্রাপ্ত ভিডিও যোগ করতে হবে।</p>
 </main>
-<footer>© Full Vibes · A project in progress</footer>
+
+<footer>© 2026 Full Vibes • Made with ❤️</footer>
+
 <script>
-function findTitles(){
-  const q=document.getElementById('search').value.toLowerCase();
-  document.querySelectorAll('.searchable').forEach(el=>{
-    el.style.display=el.innerText.toLowerCase().includes(q) ||
-      el.dataset.title.includes(q) ? '' : 'none';
+function filterCards(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  document.querySelectorAll('.card').forEach(card=>{
+    card.style.display=card.dataset.name.includes(q)?'':'none';
   });
+}
+function showInfo(name){
+  const box=document.getElementById('message');
+  box.style.display='block';
+  box.textContent=name+' — এই শিরোনামের ভিডিও এখনো যোগ করা হয়নি। পরে অনুমতিপ্রাপ্ত ভিডিও যুক্ত করা যাবে।';
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
 </body>
